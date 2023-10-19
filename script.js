@@ -18,6 +18,7 @@ btn.addEventListener('click', function() {
     }
     else {
         console.log("НЕ Введено название фильма!")
+        info.innerHTML = "НЕ Введено название фильма!"
     }
 })
 
