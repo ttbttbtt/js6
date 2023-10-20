@@ -42,6 +42,14 @@ function renderInfo(data) {
     // вывод описания фильма
     for (let key in data) {
         info.innerHTML += `${key}: ${data[key]}<br>`
+
+        // if (key == "Ratings") {
+        //     console.log(data[key]);
+        //     for (let key2 in data[key]) {
+        //         info.innerHTML += ` ${key2}: ${data[key]}${[key2]}<br>`
+        //         console.log( `911 ${key2}: ${data[key]}${[key2]}<br>`)
+        //     }
+        // }
     }
     
     // вывод постера
