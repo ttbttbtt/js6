@@ -10,6 +10,10 @@ let btn = document.getElementById('btn')
 let info = document.getElementsByClassName('info')[0]
 
 
+// постер
+let poster = document.querySelector('.poster')
+
+
 // слушатель события click на кнопку Найти
 btn.addEventListener('click', function() {
     if (vvod.value) {
@@ -26,9 +30,24 @@ btn.addEventListener('click', function() {
 // показ результата на экране
 function renderInfo(data) {
     info.innerHTML = ''
+
     for (let key in data) {
         info.innerHTML += `${key}: ${data[key]}<br>`
-      }
+    }
+
+    let p = data["Poster"] // адрес постера
+
+    let imgOld = document.getElementsByTagName('img')
+
+    for (let elem of imgOld) {
+            elem.remove();
+    }
+
+    img = document.createElement("IMG")
+    // img.src = "https://m.media-amazon.com/images/M/MV5BYTU1ZTI0YjUtZGRlMS00MDU1LWFmZmItZWRiYTg5NTExMmRjXkEyXkFqcGdeQXVyMTUzMDg3MTQw._V1_SX300.jpg"
+    img.src = `${p}`
+    poster.appendChild(img)
+
 }
 
 
